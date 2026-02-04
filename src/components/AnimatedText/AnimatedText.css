@@ -1,0 +1,101 @@
+.animated-text {
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.animated-character {
+  display: inline-block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.animated-word {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.25em;
+  line-height: 1.2;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .animated-text {
+    line-height: 1.2;
+  }
+  
+  .animated-word {
+    white-space: normal;
+    word-break: break-word;
+    margin-right: 0.15em;
+    line-height: 1.1;
+  }
+  
+  .animated-character {
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .animated-text {
+    line-height: 1.1;
+  }
+  
+  .animated-word {
+    margin-right: 0.1em;
+  }
+  
+  /* Reduce animation intensity on small screens */
+  .animated-character,
+  .animated-word {
+    transition: all 0.3s ease;
+  }
+}
+
+/* Landscape orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+  .animated-text {
+    line-height: 1.1;
+  }
+}
+
+/* Prevent layout shift during animation */
+.animated-text {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fix for Safari mobile */
+@supports (-webkit-touch-callout: none) {
+  .animated-text {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+/* Fix for text wrapping on very long words */
+.animated-text {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* Ensure text doesn't overflow containers */
+.animated-text-container {
+  overflow: visible !important;
+}
+
+/* Print styles - disable animations */
+@media print {
+  .animated-text,
+  .animated-character,
+  .animated-word {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

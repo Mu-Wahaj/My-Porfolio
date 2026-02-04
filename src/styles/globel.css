@@ -1,0 +1,202 @@
+/* CSS Reset & Variables */
+:root {
+  --primary-dark: #0a0a0a;
+  --secondary-dark: #1a1a1a;
+  --primary-blue: #3b82f6;
+  --primary-cyan: #06b6d4;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  --gradient-secondary: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  
+  --border-radius: 12px;
+  --border-radius-lg: 24px;
+  --spacing-unit: 8px;
+  
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--primary-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Scale */
+h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; }
+h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; }
+h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 600; }
+h4 { font-size: clamp(1.25rem, 2.5vw, 2rem); }
+p { font-size: clamp(1rem, 1.2vw, 1.125rem); }
+
+/* Selection */
+::selection {
+  background: var(--primary-cyan);
+  color: var(--primary-dark);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-blue);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-cyan);
+}
+/* Add to existing global.css */
+
+/* Enable native smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-blue) var(--secondary-dark);
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  transform-origin: 0%;
+  z-index: 1001;
+}
+
+/* Improve touch scrolling */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* Prevent scroll jumps */
+section {
+  scroll-margin-top: 80px; /* Adjust based on your navbar height */
+}
+
+/* Smooth transitions for all elements */
+* {
+  scroll-behavior: inherit;
+}
+/* Remove any fixed heights that might cause jumps */
+.app,
+#root,
+body,
+html {
+  height: auto;
+  min-height: 100vh;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fix for mobile touch scrolling */
+@media (max-width: 768px) {
+  body {
+    position: relative;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .container {
+    padding: 0 20px !important;
+  }
+}
+/* Add these at the end of your global.css file */
+
+/* Improved Smooth Scrolling */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Prevent layout shift */
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Ensure proper scrolling on all devices */
+@media (hover: hover) and (pointer: fine) {
+  .app {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .app {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Prevent text size adjustment on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* Remove any conflicting CSS properties */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Fix for mobile overflow */
+section {
+  overflow: hidden;
+}
+
+/* Ensure proper stacking */
+.app {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,636 @@
+/* ========== BASE HERO STYLES ========== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0 100px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ========== BACKGROUND ========== */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gradient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.15;
+}
+
+.blob-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--gradient-primary);
+  top: -150px;
+  right: -100px;
+}
+
+.blob-2 {
+  width: 250px;
+  height: 250px;
+  background: var(--gradient-secondary);
+  bottom: -100px;
+  left: -80px;
+}
+
+/* ========== GRID LAYOUT ========== */
+.hero-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+}
+
+/* ========== TEXT CONTENT ========== */
+.hero-text-content {
+  width: 100%;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 18px;
+  border-radius: 100px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hero-badge svg {
+  color: var(--primary-cyan);
+  width: 16px;
+  height: 16px;
+}
+
+/* ========== HEADLINE/TITLE STYLES ========== */
+.hero-title-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.hero-main-title-line {
+  display: block;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.hero-sub-title-line {
+  display: block;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.1;
+  width: 100%;
+  text-align: center;
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+}
+
+.hero-description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* ========== CTA BUTTONS ========== */
+.hero-cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.hero-cta-primary,
+.hero-cta-secondary {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ========== VISUAL SECTION ========== */
+.hero-visual {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.code-block {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.code-line {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.code-line:last-child {
+  margin-bottom: 0;
+  width: 70%;
+}
+
+.block-1 {
+  width: 200px;
+  height: 120px;
+  top: 20px;
+  left: 0;
+  animation: float-1 6s ease-in-out infinite;
+}
+
+.block-2 {
+  width: 180px;
+  height: 100px;
+  bottom: 40px;
+  right: 0;
+  animation: float-2 8s ease-in-out infinite;
+}
+
+.floating-orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float-orb 4s ease-in-out infinite;
+}
+
+.orb-inner {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ========== IMPROVED SCROLL INDICATOR ========== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+.mouse-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.mouse {
+  width: 34px;
+  height: 56px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  position: relative;
+  backdrop-filter: blur(4px);
+}
+
+.wheel {
+  width: 4px;
+  height: 12px;
+  background: var(--primary-blue);
+  border-radius: 2px;
+  animation: scroll-wheel 2s ease-in-out infinite;
+}
+
+.scroll-arrow {
+  color: var(--primary-blue);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(10px) rotate(-2deg); }
+}
+
+@keyframes float-orb {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
+}
+
+@keyframes scroll-wheel {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  .hero {
+    padding: 100px 0 120px;
+  }
+
+  .hero-container {
+    padding: 0 30px;
+  }
+
+  .hero-grid {
+    gap: 80px;
+  }
+
+  .hero-main-title-line {
+    font-size: 52px;
+  }
+  
+  .hero-sub-title-line {
+    font-size: 52px;
+  }
+
+  .hero-description {
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+
+  .hero-cta-buttons {
+    flex-direction: row;
+    max-width: 500px;
+    gap: 20px;
+  }
+
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    width: auto;
+    flex: 1;
+  }
+
+  .visual-container {
+    width: 400px;
+    height: 400px;
+  }
+
+  .block-1 {
+    width: 250px;
+    height: 150px;
+    padding: 25px;
+  }
+
+  .block-2 {
+    width: 220px;
+    height: 130px;
+    padding: 25px;
+  }
+
+  .floating-orb {
+    width: 150px;
+    height: 150px;
+  }
+
+  .orb-inner {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .hero {
+    padding: 120px 0 140px;
+  }
+
+  .hero-container {
+    padding: 0 40px;
+  }
+
+  .hero-grid {
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
+  }
+
+  .hero-text-content {
+    text-align: left;
+    flex: 1;
+  }
+
+  .hero-badge {
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+
+  .hero-main-title-line {
+    font-size: 64px;
+    text-align: left;
+  }
+  
+  .hero-sub-title-line {
+    font-size: 64px;
+    text-align: left;
+  }
+
+  .hero-description {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 22px;
+    margin-bottom: 60px;
+  }
+
+  .hero-cta-buttons {
+    margin: 0;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    width: auto;
+    min-width: 200px;
+  }
+
+  .hero-visual {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .visual-container {
+    width: 450px;
+    height: 450px;
+    margin: 0;
+  }
+
+  .blob-1 {
+    width: 400px;
+    height: 400px;
+    top: -200px;
+    right: -150px;
+  }
+
+  .blob-2 {
+    width: 350px;
+    height: 350px;
+    bottom: -150px;
+    left: -100px;
+  }
+
+  /* Hide scroll indicator on desktop if not needed */
+  .scroll-indicator {
+    display: none; /* Remove this line if you want it on desktop */
+  }
+}
+
+/* Large Desktop (1400px and up) */
+@media (min-width: 1400px) {
+  .hero-main-title-line {
+    font-size: 72px;
+  }
+  
+  .hero-sub-title-line {
+    font-size: 72px;
+  }
+
+  .visual-container {
+    width: 500px;
+    height: 500px;
+  }
+
+  .block-1 {
+    width: 300px;
+    height: 180px;
+  }
+
+  .block-2 {
+    width: 260px;
+    height: 160px;
+  }
+}
+
+/* Mobile (under 768px) */
+@media (max-width: 767px) {
+  .scroll-indicator {
+    display: flex; /* Show on mobile */
+  }
+}
+
+/* Small Mobile (under 480px) */
+@media (max-width: 480px) {
+  .hero {
+    padding: 70px 0 80px;
+    min-height: 90vh;
+  }
+
+  .hero-container {
+    padding: 0 16px;
+  }
+
+  .hero-main-title-line {
+    font-size: 32px;
+  }
+  
+  .hero-sub-title-line {
+    font-size: 32px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+
+  .visual-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .floating-orb {
+    width: 100px;
+    height: 100px;
+  }
+
+  .orb-inner {
+    width: 50px;
+    height: 50px;
+  }
+
+  .block-1 {
+    width: 160px;
+    height: 100px;
+    padding: 15px;
+  }
+
+  .block-2 {
+    width: 140px;
+    height: 90px;
+    padding: 15px;
+  }
+
+  .code-line {
+    height: 6px;
+    margin-bottom: 8px;
+  }
+
+  .scroll-indicator {
+    bottom: 30px;
+  }
+  
+  .scroll-text {
+    font-size: 12px;
+  }
+}
+
+/* Extra Small Mobile (under 360px) */
+@media (max-width: 360px) {
+  .hero-main-title-line {
+    font-size: 28px;
+  }
+  
+  .hero-sub-title-line {
+    font-size: 28px;
+  }
+
+  .hero-badge {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-cta-buttons .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Landscape Orientation */
+@media (max-height: 700px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: 80px 0 100px;
+  }
+
+  .hero-grid {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .hero-main-title-line {
+    font-size: 36px;
+  }
+  
+  .hero-sub-title-line {
+    font-size: 36px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .visual-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .scroll-indicator {
+    display: none; /* Hide in landscape */
+  }
+}
+
+/* Fix for AnimatedText component word wrapping */
+.hero-main-title-line .animated-word,
+.hero-sub-title-line .animated-word {
+  white-space: normal;
+  display: inline-block;
+}
