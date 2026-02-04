@@ -113,21 +113,7 @@ const Hero = () => {
           </motion.div>
         </div>
         
-        {/* Improved Scroll Indicator */}
-        <motion.div 
-          className="scroll-indicator"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-        >
-          <div className="mouse-wrapper">
-            <div className="mouse">
-              <div className="wheel" />
-            </div>
-            <ChevronDown className="scroll-arrow" size={20} />
-          </div>
-          <span className="scroll-text">Scroll down</span>
-        </motion.div>
+        
       </div>
     </section>
   )
